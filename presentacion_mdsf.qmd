@@ -1,0 +1,505 @@
+---
+# title: ""Ciencia de datos para el sector público
+# author: "Ignacio Agloni"
+format:
+  revealjs:
+    auto-stretch: false
+    margin: 0
+    slide-number: true
+    scrollable: true
+    preview-links: auto
+    logo: imagenes/logo_portada2.png
+    css: ine_quarto_styles.css
+    includes:
+      in-header:
+        - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+    # footer: <https://quarto.org>
+    
+---
+
+#
+
+
+[]{.linea-superior} 
+[]{.linea-inferior} 
+
+
+<img src="imagenes/logo_portada2.png" width="20%"/>  
+
+
+[**Ciencia de datos en el INE**]{.big-par .center-justified}
+
+[**Unidad de Gobierno de Datos**]{.big-par .center-justified}
+
+[**Equipo de Ciencia de Datos**]{.big-par .center-justified}
+
+[**Noviembre 2024**]{.big-par .center-justified}
+
+
+
+## Tópicos a tratar {transition="convex"}
+
+</br>
+
+- [*Principales proyectos*]{.big-par}
+
+- [*Herramientas y arquitectura*]{.big-par}
+
+- [*Oportunidades para el trabajo colaborativo con MDSF*]{.big-par}
+
+
+# {background-color="white" transition="slide"}
+
+[Principales proyectos]{.big-par2}
+
+## Procesamiento de lenguaje natural {transition="convex"}
+
+[Modelos de codificación automática en encuestas de hogares y económicas]{.medium-par}
+
+<div style="text-align: center;">
+  <img src="imagenes/ocupacion.JPG" style="width:350px;" class="fragment" data-fragment-index="1"/>
+</div>
+
+<div style="text-align: center; margin-top: 20px; display: flex; justify-content: center;">
+  <img src="imagenes/reloj.png" style="width:150px; margin-right: 20px;" class="fragment" data-fragment-index="2"/>
+  <img src="imagenes/peso.jpg" style="width:150px;" class="fragment" data-fragment-index="3"/>
+</div>
+
+
+## Aplicaciones de codificación automática {transition="convex"}
+
+::: {.panel-tabset}
+
+### [APIs]{.medium-par}
+
+<div style="text-align: center;">
+  <img src="imagenes/api-restaurante.JPG" style="width:850px;"/>
+</div>
+
+### [CIUO y CAENES]{.medium-par}
+
+**CIUO-08**  </br>
+**CAENES** 
+
+[Puedes acceder al tutorial de uso de esta API a través de este enlace ](https://www.ine.gob.cl/calidad-estadistica/clasificaciones/api-codificacion)
+
+[<img src="imagenes/GitHub-icon.png" alt="GitHub" style="width:40px; vertical-align:middle;"/> [https://github.com/inesscc/ineclassifiers](https://github.com/inesscc/ineclassifiers)]{.medium-par}
+
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="imagenes/tutorial-api.JPG" style="width:450px;" class="fragment" data-fragment-index="1"/>
+  <img src="imagenes/tutorial-api2.JPG" style="width:450px;" class="fragment" data-fragment-index="2"/>
+</div>
+
+### [Clasificación delitos]{.medium-par}
+
+Modelo desarrollado para la revisión de calidad de la Encuesta de Victimización (ENUSC)
+
+Capa de embeddings + **LSTM** (Long Short-Term Memory)
+
+[La aplicación (de acceso interno) puede encontrarse en este link (Swagger)](http://10.90.2.47:3123/docs)
+
+::: {.fragment}
+
+*Iba hablando por celular en la calle. Un tipo me quitó el celular y salió corriendo*
+:::
+
+
+
+::: {.fragment}
+ 
+ <img src="imagenes/delito_robo_sorpresa.PNG" style="width:300px;"/>
+:::
+
+::: {.fragment }
+*Me pusieron un cuchillo en la espalda y me quitaron el celular*
+:::
+
+::: {.fragment }
+ <img src="imagenes/delito_robo_violencia.PNG" style="width:300px;"/>
+:::
+
+
+
+
+
+
+### [CPC]{.medium-par}
+
+
+```{r}
+library(tidyverse)
+data <- data.frame(desagregacion = c("3 dígitos", "4 dígitos", "5 dígitos", "7 dígitos"),
+                   clases = c(237, 806, 1396, 1944)
+                   )
+
+data %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling(font_size = 16)
+
+```
+
+ <img src="imagenes/directorio_cpc.PNG" style="width:800px;"/>
+
+
+:::
+
+## Paquete calidad en R {transition="convex"}
+
+</br> 
+
+*Es el **primer paquete en R desarrollado en el INE** y con **colaboración de CEPAL***
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/estandar.JPG" style="width:300px; margin-right: 20px;"/>
+  <img src="imagenes/lumley.JPG" style="width:500px; margin-top: 40px;"/>
+</div>
+
+Tiene **8207 descargas totales** hasta ayer
+
+Tiene **322 descargas** el último mes
+
+Tiene **100 descargas** la última semana
+
+[<img src="imagenes/GitHub-icon.png" alt="GitHub" style="width:40px; vertical-align:middle;"/> [https://github.com/inesscc/calidad](https://github.com/inesscc/calidad)]{.medium-par}
+
+## Estratificación con imágenes satelitales {transition="convex"}
+
+::: {.panel-tabset}
+
+### [UPM]{.medium-par}
+
+Este ejercicio se desarrolló en el Gran Santiago
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/upm-estratificacion.JPG" style="width:600px; margin-right: 20px;"/>
+</div>
+
+### [Labels]{.medium-par}
+
+Entrenamos con ~1450 UPMs (e imágenes) con datos de ingreso
+
+Ingreso per cápita de 3 encuestas:
+
+    - Encuesta de Presupuestos Familiares 
+    - Piloto CASEN
+    - Encuesta Suplementaria de Ingresos
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/mean_upm.png" style="width:400px; margin-right: 20px;"/>
+</div>
+
+
+### [Features]{.medium-par}
+
+Usamos:
+
+Detección de árboles <br/>
+Detección de piscinas <br/>
+Intensidad de luces nocturnas <br/>
+Registros administrativos: cercanía a colegios, estaciones de metro, comisarías, farmacias, etc.
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/trees.JPG" style="width:400px; margin-right: 20px;"/>
+</div>
+
+### [Predicción]{.medium-par}
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/prediccion.JPG" style="width:600px; margin-right: 20px;"/>
+</div>
+
+### [App]{.medium-par}
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/app1-estratificacion.png" style="width:600px; margin-right: 20px;"/>
+</div>
+
+:::
+
+## Seguimiento operativo con paradatos {transition="convex"}
+
+::: {.panel-tabset}
+
+### [Contexto]{.medium-par}
+
+</br>
+
+**¿Qué son los paradatos?**
+
+Son todos los **registros brutos de cada acción** que se realiza en las entrevistas (dispositivos móviles de captura)
+
+**Son datos grandes:** Durante el levantamiento de ENUSC 2023 se alcanzó un total de **66.375.084** observaciones
+
+Permiten **detectar desviaciones** en la correcta aplicación de una encuesta
+
+La salida de este flujo de datos es un **dashboard con tablas y visualizaciones**
+
+### [Metodología]{.medium-par}
+
+Se utilizó un **orquestador de flujos de trabajo (Dagster)**
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/dagster.JPG" style="width:600px; margin-right: 20px;"/>
+</div>
+
+
+### [Encuestas]{.medium-par}
+
+- Encuesta Nacional Urbana de Seguridad Ciudadana (ENUSC) 
+
+- Piloto de Encuesta de Microemprendimiento (EME)
+
+- Encuesta Nacional de participación cultural y comportamiento lector (ENPCCL) 
+
+### [Dashboard]{.medium-par}
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/grafico-paradatos.png" style="width:1100px; margin-right: 20px;"/>
+</div>
+
+[Ejemplo ENPCCL](http://10.91.161.129:8016)
+
+:::
+
+## Innominación de documentos con DL {transition="convex"}
+
+::: {.panel-tabset}
+
+### [Requerimiento]{.medium-par}
+
+Requerimiento de Transparencia al Sector público de **públicar informes de actividades de personal a honorarios**
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/ej_informe1.png" style="width:400px; margin-right: 20px;"/>
+</div>
+
+Debe publicarse así:
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/informe-innominado.JPG" style="width:400px; margin-right: 20px;"/>
+</div>
+
+
+### [Modelo]{.medium-par}
+
+Etiquetamos internamente ~1000 imágenes
+
+El modelo YOLOv *You Only Look Once*, es un modelo de detección de objetos proveniente del paquete Ultralytics, diseñado con *deep learning*
+
+El modelo cuenta con 24 capas convolucionales y 2 capas de conexión completa
+
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/model_comparison.png" style="width:400px; margin-right: 20px;"/>
+</div>
+
+
+
+:::
+
+## Detección de dobles marcas en SIMCE {transition="convex"}
+
+::: {.panel-tabset}
+
+### [SIMCE]{.medium-par}
+
+Esta es una colaboración del INE a la **Agencia de Calidad de la Educación** y el **Laboratorio de Gobierno**
+
+
+**Objetivo:** generar un modelo que detecte las **dobles marcas** en cuestionarios SIMCE
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/simce1.jpg" style="width:600px; margin-right: 20px;"/>
+</div>
+
+### [OCR]{.medium-par}
+
+El simce corrobora **manualmente todo** lo que registra el OCR
+
+El OCR detecta todo lo que tiene 2 marcas  
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/doble-marca.JPG" style="width:300px; margin-right: 20px;"/>
+  <img src="imagenes/no-doble-marca.JPG" style="width:300px; margin-top: 20px;"/>
+</div>
+
+### [Solución]{.medium-par}
+
+El **SIMCE se revisa por completo por personas**, que corroboran lo que registra el OCR
+
+El OCR reacciona ante estímulos mínimos como **doble marca** 
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/solucion-simce.JPG" style="width:600px; margin-right: 20px;"/>
+</div>
+
+::: 
+
+## Luces nocturnas para SAE {.medium-par}
+
+
+::: {.panel-tabset}
+
+### [SAE ENUSC]{.medium-par}
+
+
+**Predictores tradicionales modelo FH**
+
+- RRAA de delitos
+- Edad
+- RRAA empresas
+- Existencia de ferias
+
+### [Luces]{.medium-par}
+
+
+
+<img src="imagenes/luces_santiago.jpg" style="width:600px; margin-right: 20px;"/>
+
+
+:::
+
+## RRAA: tasa rotación laboral
+
+
+Caso de uso del lago de datos
+
+Presentado en *World Data Forum*
+
+Procesamiento de más de ~600 millones de filas
+
+::: {.fragment }
+<img src="imagenes/plot_rotacion.png" style="width:600px;"/>
+
+[IP demo](http://10.90.10.60:8012/)
+:::
+
+
+
+
+
+
+
+
+## ¿Dónde está el Censo? {transition="convex"}
+
+::: {.panel-tabset}
+
+### [Censo 2024]{.medium-par}
+
+Requerimiento del equipo de **Censo de Población y Vivienda 2024**
+
+Désarrollo ágil: **~2 meses**
+
+Alta complejidad por la **alta concurrencia** y necesidad de **actualización rápida por contingencias en el terreno**
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/dondeesta1.jpg" style="width:400px; margin-right: 20px;"/>
+  <img src="imagenes/dondeesta2.jpg" style="width:400px; margin-top: 20px;"/>
+</div>
+
+### [Arquitectura]{.medium-par}
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/arquitectura-censo.JPG" style="width:700px; margin-right: 20px;"/>
+</div>
+
+:::
+
+# {background-color="white" transition="slide"}
+
+[Herramientas y arquitectura]{.big-par2}
+
+## Propuesta arquitectura para una oficina estadística {transition="convex"}
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/arquitectura-lago.jpg" style="width:1000px; margin-right: 20px;"/>
+</div>
+
+# {background-color="white" transition="slide"}
+
+[Oportunidades de colaboración interinstitucional]{.big-par2}
+
+## Oportunidades y desafios {transition="convex"}
+
+::: {.panel-tabset .medium-par}
+
+### [Oportunidades]{.medium-par}
+
+
+::: {.fragment }
+- Fuentes de información tradicional y no tradicional
+  + Explotación de imágenes satelitales para SAE
+  + RRAA para validación y/o complemento
+
+:::
+
+
+::: {.fragment}
+- Empaquetamiento de soluciones en R
+  + Validación de datos
+  + Reportería
+  + Análisis
+:::
+
+::: {.fragment }
+- Monitoreo de la recolección mediante survey y paradatos
+  + Tiempos
+  + Geolocalización
+  + Seguimiento a indicadores clave
+  + Rendimiento de encuestadores
+
+:::
+
+
+
+
+::: {.fragment }
+- Clasificador de texto para validación
+ + CAENES
+ + CIUO-08
+
+:::
+
+
+
+### [Desafios]{.medium-par}
+
+- Infraestructura tecnológica adecuada
+
+- Manejo de información sensible por parte del INE  
+
+- Personal calificado para desarrollar estas tareas
+
+- Transferencia tecnológica desde INE a usuarios y usuarias del MDSF
+
+- Continuidad operativa de los servicios desarrollados
+
+
+
+
+:::
+
+#
+
+[Conversemos]{.big-par2}
+ 
+
+#
+
+
+[]{.linea-superior} 
+[]{.linea-inferior} 
+
+
+<img src="imagenes/logo_portada2.png" width="20%"/>  
+
+
+[**Ciencia de datos en el INE**]{.big-par .center-justified}
+
+[**Unidad de Gobierno de Datos**]{.big-par .center-justified}
+
+[**Equipo de Ciencia de Datos**]{.big-par .center-justified}
+
+[**Noviembre 2024**]{.big-par .center-justified}
+
