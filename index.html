@@ -186,7 +186,6 @@
 </div>
 <div id="tabset-1-3">
 <p>Modelo desarrollado para la revisión de calidad de la Encuesta de Victimización (ENUSC)</p>
-<p>Capa de embeddings + <strong>LSTM</strong> (Long Short-Term Memory)</p>
 <p><a href="http://10.90.2.47:3123/docs">La aplicación (de acceso interno) puede encontrarse en este link (Swagger)</a></p>
 <div class="fragment">
 <p><em>Iba hablando por celular en la calle. Un tipo me quitó el celular y salió corriendo</em></p>
@@ -202,6 +201,7 @@
 </div>
 </div>
 <div id="tabset-1-4">
+<p>Clasificador chileno de productos</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table caption-top" data-quarto-postprocess="true" style="font-size: 16px; margin-left: auto; margin-right: auto;">
@@ -246,15 +246,15 @@
 <div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
 <p><img src="imagenes/estandar.JPG" style="width:300px; margin-right: 20px;"> <img src="imagenes/lumley.JPG" style="width:500px; margin-top: 40px;"></p>
 </div>
-<p>Tiene <strong>8207 descargas totales</strong> hasta ayer</p>
-<p>Tiene <strong>322 descargas</strong> el último mes</p>
-<p>Tiene <strong>100 descargas</strong> la última semana</p>
+<p>Tiene <strong>9294 descargas totales</strong> hasta ayer</p>
+<p>Tiene <strong>367 descargas</strong> el último mes</p>
+<p>Tiene <strong>79 descargas</strong> la última semana</p>
 <p><span class="medium-par"><img src="imagenes/GitHub-icon.png" alt="GitHub" style="width:40px; vertical-align:middle;"> <a href="https://github.com/inesscc/calidad">https://github.com/inesscc/calidad</a></span></p>
 </section>
 <section id="estratificación-con-imágenes-satelitales" class="slide level2" data-transition="convex">
 <h2>Estratificación con imágenes satelitales</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><span class="medium-par">UPM</span></a></li><li><a href="#tabset-2-2"><span class="medium-par">Labels</span></a></li><li><a href="#tabset-2-3"><span class="medium-par">Features</span></a></li><li><a href="#tabset-2-4"><span class="medium-par">Predicción</span></a></li><li><a href="#tabset-2-5"><span class="medium-par">App</span></a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><span class="medium-par">UPM</span></a></li><li><a href="#tabset-2-2"><span class="medium-par">Features</span></a></li><li><a href="#tabset-2-3"><span class="medium-par">Predicción</span></a></li><li><a href="#tabset-2-4"><span class="medium-par">App</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <p>Este ejercicio se desarrolló en el Gran Santiago</p>
@@ -263,28 +263,18 @@
 </div>
 </div>
 <div id="tabset-2-2">
-<p>Entrenamos con ~1450 UPMs (e imágenes) con datos de ingreso</p>
-<p>Ingreso per cápita de 3 encuestas:</p>
-<pre><code>- Encuesta de Presupuestos Familiares 
-- Piloto CASEN
-- Encuesta Suplementaria de Ingresos</code></pre>
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-<p><img src="imagenes/mean_upm.png" style="width:400px; margin-right: 20px;"></p>
-</div>
-</div>
-<div id="tabset-2-3">
 <p>Usamos:</p>
 <p>Detección de árboles <br> Detección de piscinas <br> Intensidad de luces nocturnas <br> Registros administrativos: cercanía a colegios, estaciones de metro, comisarías, farmacias, etc.</p>
 <div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
 <p><img src="imagenes/trees.JPG" style="width:400px; margin-right: 20px;"></p>
 </div>
 </div>
-<div id="tabset-2-4">
+<div id="tabset-2-3">
 <div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
 <p><img src="imagenes/prediccion.JPG" style="width:600px; margin-right: 20px;"></p>
 </div>
 </div>
-<div id="tabset-2-5">
+<div id="tabset-2-4">
 <div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
 <p><img src="imagenes/app1-estratificacion.png" style="width:600px; margin-right: 20px;"></p>
 </div>
@@ -353,41 +343,12 @@
 </div>
 </div>
 </section>
-<section id="detección-de-dobles-marcas-en-simce" class="slide level2" data-transition="convex">
-<h2>Detección de dobles marcas en SIMCE</h2>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><span class="medium-par">SIMCE</span></a></li><li><a href="#tabset-5-2"><span class="medium-par">OCR</span></a></li><li><a href="#tabset-5-3"><span class="medium-par">Solución</span></a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
-<p>Esta es una colaboración del INE a la <strong>Agencia de Calidad de la Educación</strong> y el <strong>Laboratorio de Gobierno</strong></p>
-<p><strong>Objetivo:</strong> generar un modelo que detecte las <strong>dobles marcas</strong> en cuestionarios SIMCE</p>
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-<p><img src="imagenes/simce1.jpg" style="width:600px; margin-right: 20px;"></p>
-</div>
-</div>
-<div id="tabset-5-2">
-<p>El simce corrobora <strong>manualmente todo</strong> lo que registra el OCR</p>
-<p>El OCR detecta todo lo que tiene 2 marcas</p>
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-<p><img src="imagenes/doble-marca.JPG" style="width:300px; margin-right: 20px;"> <img src="imagenes/no-doble-marca.JPG" style="width:300px; margin-top: 20px;"></p>
-</div>
-</div>
-<div id="tabset-5-3">
-<p>El <strong>SIMCE se revisa por completo por personas</strong>, que corroboran lo que registra el OCR</p>
-<p>El OCR reacciona ante estímulos mínimos como <strong>doble marca</strong></p>
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-<p><img src="imagenes/solucion-simce.JPG" style="width:600px; margin-right: 20px;"></p>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section id="luces-nocturnas-para-sae" class="slide level2 medium-par">
 <h2>Luces nocturnas para SAE</h2>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><span class="medium-par">SAE ENUSC</span></a></li><li><a href="#tabset-6-2"><span class="medium-par">Luces</span></a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><span class="medium-par">SAE ENUSC</span></a></li><li><a href="#tabset-5-2"><span class="medium-par">Luces</span></a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-5-1">
 <p><strong>Predictores tradicionales modelo FH</strong></p>
 <ul>
 <li>RRAA de delitos</li>
@@ -396,7 +357,7 @@
 <li>Existencia de ferias</li>
 </ul>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-5-2">
 <p><img src="imagenes/luces_santiago.jpg" style="width:600px; margin-right: 20px;"></p>
 </div>
 </div>
@@ -415,9 +376,9 @@
 <section id="dónde-está-el-censo" class="slide level2" data-transition="convex">
 <h2>¿Dónde está el Censo?</h2>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><span class="medium-par">Censo 2024</span></a></li><li><a href="#tabset-7-2"><span class="medium-par">Arquitectura</span></a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><span class="medium-par">Censo 2024</span></a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-6-1">
 <p>Requerimiento del equipo de <strong>Censo de Población y Vivienda 2024</strong></p>
 <p>Désarrollo ágil: <strong>~2 meses</strong></p>
 <p>Alta complejidad por la <strong>alta concurrencia</strong> y necesidad de <strong>actualización rápida por contingencias en el terreno</strong></p>
@@ -425,9 +386,33 @@
 <p><img src="imagenes/dondeesta1.jpg" style="width:400px; margin-right: 20px;"> <img src="imagenes/dondeesta2.jpg" style="width:400px; margin-top: 20px;"></p>
 </div>
 </div>
-<div id="tabset-7-2">
+</div>
+</div>
+</section>
+<section id="detección-de-dobles-marcas-en-simce" class="slide level2" data-transition="convex">
+<h2>Detección de dobles marcas en SIMCE</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><span class="medium-par">SIMCE</span></a></li><li><a href="#tabset-7-2"><span class="medium-par">OCR</span></a></li><li><a href="#tabset-7-3"><span class="medium-par">Solución</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<p>Esta es una colaboración del INE a la <strong>Agencia de Calidad de la Educación</strong> y el <strong>Laboratorio de Gobierno</strong></p>
+<p><strong>Objetivo:</strong> generar un modelo que detecte las <strong>dobles marcas</strong> en cuestionarios SIMCE</p>
 <div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-<p><img src="imagenes/arquitectura-censo.JPG" style="width:700px; margin-right: 20px;"></p>
+<p><img src="imagenes/simce1.jpg" style="width:600px; margin-right: 20px;"></p>
+</div>
+</div>
+<div id="tabset-7-2">
+<p>El simce corrobora <strong>manualmente todo</strong> lo que registra el OCR</p>
+<p>El OCR detecta todo lo que tiene 2 marcas</p>
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+<p><img src="imagenes/doble-marca.JPG" style="width:300px; margin-right: 20px;"> <img src="imagenes/no-doble-marca.JPG" style="width:300px; margin-top: 20px;"></p>
+</div>
+</div>
+<div id="tabset-7-3">
+<p>El <strong>SIMCE se revisa por completo por personas</strong>, que corroboran lo que registra el OCR</p>
+<p>El OCR reacciona ante estímulos mínimos como <strong>doble marca</strong></p>
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+<p><img src="imagenes/solucion-simce.JPG" style="width:600px; margin-right: 20px;"></p>
 </div>
 </div>
 </div>
@@ -480,6 +465,7 @@
 <ul>
 <li>Tiempos</li>
 <li>Geolocalización</li>
+<li>Detección de anomalías</li>
 <li>Seguimiento a indicadores clave</li>
 <li>Rendimiento de encuestadores</li>
 </ul></li>
@@ -490,6 +476,17 @@
 <li>Clasificador de texto para validación</li>
 <li>CAENES</li>
 <li>CIUO-08</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Tratamiento de preguntas de texto libre
+<ul>
+<li>Razón de no asistencia a educación</li>
+<li>Razón de no asistencia a educación parvularia</li>
+<li>Otra razón de no búsqueda de empleo</li>
+<li>Etc</li>
+</ul></li>
 </ul>
 </div>
 </div>

@@ -94,8 +94,6 @@ format:
 
 Modelo desarrollado para la revisión de calidad de la Encuesta de Victimización (ENUSC)
 
-Capa de embeddings + **LSTM** (Long Short-Term Memory)
-
 [La aplicación (de acceso interno) puede encontrarse en este link (Swagger)](http://10.90.2.47:3123/docs)
 
 ::: {.fragment}
@@ -124,6 +122,8 @@ Capa de embeddings + **LSTM** (Long Short-Term Memory)
 
 
 ### [CPC]{.medium-par}
+
+Clasificador chileno de productos
 
 
 ```{r}
@@ -154,11 +154,11 @@ data %>%
   <img src="imagenes/lumley.JPG" style="width:500px; margin-top: 40px;"/>
 </div>
 
-Tiene **8207 descargas totales** hasta ayer
+Tiene **9294 descargas totales** hasta ayer
 
-Tiene **322 descargas** el último mes
+Tiene **367 descargas** el último mes
 
-Tiene **100 descargas** la última semana
+Tiene **79 descargas** la última semana
 
 [<img src="imagenes/GitHub-icon.png" alt="GitHub" style="width:40px; vertical-align:middle;"/> [https://github.com/inesscc/calidad](https://github.com/inesscc/calidad)]{.medium-par}
 
@@ -173,21 +173,6 @@ Este ejercicio se desarrolló en el Gran Santiago
 <div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
   <img src="imagenes/upm-estratificacion.JPG" style="width:600px; margin-right: 20px;"/>
 </div>
-
-### [Labels]{.medium-par}
-
-Entrenamos con ~1450 UPMs (e imágenes) con datos de ingreso
-
-Ingreso per cápita de 3 encuestas:
-
-    - Encuesta de Presupuestos Familiares 
-    - Piloto CASEN
-    - Encuesta Suplementaria de Ingresos
-
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-  <img src="imagenes/mean_upm.png" style="width:400px; margin-right: 20px;"/>
-</div>
-
 
 ### [Features]{.medium-par}
 
@@ -297,43 +282,6 @@ El modelo cuenta con 24 capas convolucionales y 2 capas de conexión completa
 
 :::
 
-## Detección de dobles marcas en SIMCE {transition="convex"}
-
-::: {.panel-tabset}
-
-### [SIMCE]{.medium-par}
-
-Esta es una colaboración del INE a la **Agencia de Calidad de la Educación** y el **Laboratorio de Gobierno**
-
-
-**Objetivo:** generar un modelo que detecte las **dobles marcas** en cuestionarios SIMCE
-
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-  <img src="imagenes/simce1.jpg" style="width:600px; margin-right: 20px;"/>
-</div>
-
-### [OCR]{.medium-par}
-
-El simce corrobora **manualmente todo** lo que registra el OCR
-
-El OCR detecta todo lo que tiene 2 marcas  
-
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-  <img src="imagenes/doble-marca.JPG" style="width:300px; margin-right: 20px;"/>
-  <img src="imagenes/no-doble-marca.JPG" style="width:300px; margin-top: 20px;"/>
-</div>
-
-### [Solución]{.medium-par}
-
-El **SIMCE se revisa por completo por personas**, que corroboran lo que registra el OCR
-
-El OCR reacciona ante estímulos mínimos como **doble marca** 
-
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-  <img src="imagenes/solucion-simce.JPG" style="width:600px; margin-right: 20px;"/>
-</div>
-
-::: 
 
 ## Luces nocturnas para SAE {.medium-par}
 
@@ -398,13 +346,48 @@ Alta complejidad por la **alta concurrencia** y necesidad de **actualización r�
   <img src="imagenes/dondeesta2.jpg" style="width:400px; margin-top: 20px;"/>
 </div>
 
-### [Arquitectura]{.medium-par}
-
-<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
-  <img src="imagenes/arquitectura-censo.JPG" style="width:700px; margin-right: 20px;"/>
-</div>
 
 :::
+
+## Detección de dobles marcas en SIMCE {transition="convex"}
+
+::: {.panel-tabset}
+
+### [SIMCE]{.medium-par}
+
+Esta es una colaboración del INE a la **Agencia de Calidad de la Educación** y el **Laboratorio de Gobierno**
+
+
+**Objetivo:** generar un modelo que detecte las **dobles marcas** en cuestionarios SIMCE
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/simce1.jpg" style="width:600px; margin-right: 20px;"/>
+</div>
+
+### [OCR]{.medium-par}
+
+El simce corrobora **manualmente todo** lo que registra el OCR
+
+El OCR detecta todo lo que tiene 2 marcas  
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/doble-marca.JPG" style="width:300px; margin-right: 20px;"/>
+  <img src="imagenes/no-doble-marca.JPG" style="width:300px; margin-top: 20px;"/>
+</div>
+
+### [Solución]{.medium-par}
+
+El **SIMCE se revisa por completo por personas**, que corroboran lo que registra el OCR
+
+El OCR reacciona ante estímulos mínimos como **doble marca** 
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
+  <img src="imagenes/solucion-simce.JPG" style="width:600px; margin-right: 20px;"/>
+</div>
+
+::: 
+
+
 
 # {background-color="white" transition="slide"}
 
@@ -415,6 +398,9 @@ Alta complejidad por la **alta concurrencia** y necesidad de **actualización r�
 <div style="text-align: center; display: flex; justify-content: center; align-items: flex-start;">
   <img src="imagenes/arquitectura-lago.jpg" style="width:1000px; margin-right: 20px;"/>
 </div>
+
+
+
 
 # {background-color="white" transition="slide"}
 
@@ -446,6 +432,7 @@ Alta complejidad por la **alta concurrencia** y necesidad de **actualización r�
 - Monitoreo de la recolección mediante survey y paradatos
   + Tiempos
   + Geolocalización
+  + Detección de anomalías
   + Seguimiento a indicadores clave
   + Rendimiento de encuestadores
 
@@ -459,6 +446,14 @@ Alta complejidad por la **alta concurrencia** y necesidad de **actualización r�
  + CAENES
  + CIUO-08
 
+:::
+
+::: {.fragment }
+- Tratamiento de preguntas de texto libre
+  + Razón de no asistencia a educación
+  + Razón de no asistencia a educación parvularia
+  + Otra razón de no búsqueda de empleo
+  + Etc
 :::
 
 
