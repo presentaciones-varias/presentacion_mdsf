@@ -174,7 +174,7 @@ Este ejercicio se desarrolló en el Gran Santiago
   <img src="imagenes/upm-estratificacion.JPG" style="width:600px; margin-right: 20px;"/>
 </div>
 
-### [Features]{.medium-par}
+### [Predictores]{.medium-par}
 
 Usamos:
 
@@ -269,7 +269,7 @@ Debe publicarse así:
 
 Etiquetamos internamente ~1000 imágenes
 
-El modelo YOLOv *You Only Look Once*, es un modelo de detección de objetos proveniente del paquete Ultralytics, diseñado con *deep learning*
+El modelo YOLOv *You Only Look Once* es un modelo de *deep learning* para la detección de objetos
 
 El modelo cuenta con 24 capas convolucionales y 2 capas de conexión completa
 
@@ -412,22 +412,6 @@ El OCR reacciona ante estímulos mínimos como **doble marca**
 
 ### [Oportunidades]{.medium-par}
 
-
-::: {.fragment }
-- Fuentes de información tradicional y no tradicional
-  + Explotación de imágenes satelitales para SAE
-  + RRAA para validación y/o complemento
-
-:::
-
-
-::: {.fragment}
-- Empaquetamiento de soluciones en R
-  + Validación de datos
-  + Reportería
-  + Análisis
-:::
-
 ::: {.fragment }
 - Monitoreo de la recolección mediante survey y paradatos
   + Tiempos
@@ -440,13 +424,27 @@ El OCR reacciona ante estímulos mínimos como **doble marca**
 
 
 
+::: {.fragment }
+- Fuentes de información tradicional y no tradicional
+  + Explotación de imágenes satelitales para SAE
+  + Fuentes externas (farmacias, comercio, parques, etc)
+
+:::
 
 ::: {.fragment }
 - Clasificador de texto para validación
- + CAENES
- + CIUO-08
+  + CAENES
+  + CIUO-08
 
 :::
+
+
+::: {.fragment}
+- Empaquetamiento de soluciones en R
+  + Difusión de información
+:::
+
+
 
 ::: {.fragment }
 - Tratamiento de preguntas de texto libre
